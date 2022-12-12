@@ -2,11 +2,11 @@ package com.example.beadando_joiad3
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.beadando_joiad3.adapter.Dog_RecyclerViewAdapter
 import com.example.beadando_joiad3.model.DogModel
 import com.example.beadando_joiad3.model.HeaderAdapter
 
