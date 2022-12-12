@@ -1,5 +1,6 @@
 package com.example.beadando_joiad3.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.beadando_joiad3.model.APIModel
@@ -25,8 +26,8 @@ class DogViewModel constructor(private val repository: Repository):ViewModel(){
 
     private fun onError(msg: String) {
 
-    errormsg.value = msg
-        loading.value = false
+    errormsg.postValue(msg)
+        loading.postValue(false)
 
     }
 
@@ -43,6 +44,7 @@ class DogViewModel constructor(private val repository: Repository):ViewModel(){
             withContext((Dispatchers.Main)){
                 if(response.isSuccessful){
                     dogPhotoList.postValue(response.body())
+
                     loading.value = false
                 }
                 else{

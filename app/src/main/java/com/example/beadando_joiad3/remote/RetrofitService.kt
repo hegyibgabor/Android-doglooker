@@ -8,7 +8,7 @@ import retrofit2.http.GET
 
 interface RetrofitService {
 
-    @GET("breeds/image/random/15")
+    @GET("breed/hound/images/random/15")
     suspend fun getImg():Response<List<APIModel>>
 
     companion object {

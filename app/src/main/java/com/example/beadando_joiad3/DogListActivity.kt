@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.beadando_joiad3.adapter.Dog_RecyclerViewAdapter
 import com.example.beadando_joiad3.model.DogModel
-import com.example.beadando_joiad3.model.HeaderAdapter
+import com.example.beadando_joiad3.adapter.HeaderAdapter
 
 class DogListActivity : AppCompatActivity() {
     var newArrayList = ArrayList<DogModel>()

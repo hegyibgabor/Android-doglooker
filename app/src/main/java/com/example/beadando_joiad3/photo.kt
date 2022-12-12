@@ -9,6 +9,8 @@ import android.app.ProgressDialog;
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.beadando_joiad3.adapter.PhotoAdapter
 import com.example.beadando_joiad3.databinding.FragmentPhotosBinding
 import com.example.beadando_joiad3.model.*
@@ -31,15 +33,18 @@ private const val ARG_PARAM2 = "param2"
 class photo : Fragment() {
 
 
-
+    private var layoutManager: RecyclerView.LayoutManager? = null
     lateinit var viewmodel : DogViewModel
     private val adapter = PhotoAdapter()
 
     private var _binding: FragmentPhotosBinding? = null
 
     private val binding get() = _binding!!
-    
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
@@ -50,7 +55,6 @@ class photo : Fragment() {
 
         viewmodel = ViewModelProvider(this,ModelViewModelFactory(repository)).get(DogViewModel::class.java)
 
-        viewmodel.getPhotos()
 
         binding.photosRecycler.adapter = adapter
 
@@ -69,15 +73,13 @@ class photo : Fragment() {
             }
         })
 
-
+        viewmodel.getPhotos()
 
         val fr_imgbtn = view.findViewById<TextView>(R.id.fr_infobtn)
         fr_imgbtn.setOnClickListener { Navigation.findNavController(view).navigate(R.id.photo_to_info) }
 
 
         return view
-
-
 
     }
 
