@@ -1,5 +1,6 @@
 package com.example.beadando_joiad3.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,6 @@ import com.squareup.picasso.Picasso
 class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>(){
 
 
-    //Nem a modelből kéne lehet kiolvasni hanem külön egy listába elmenteni az egészet, de hátha így is
     var photolist= mutableListOf<APIModel>()
 
     class PhotoViewHolder(val binding : ItemPicBinding):RecyclerView.ViewHolder(binding.root)

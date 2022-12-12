@@ -33,7 +33,6 @@ class DogViewModel constructor(private val repository: Repository):ViewModel(){
 
     override fun onCleared() {
         super.onCleared()
-
         handlejob?.cancel()
     }
 
@@ -42,12 +41,13 @@ class DogViewModel constructor(private val repository: Repository):ViewModel(){
         handlejob = CoroutineScope(Dispatchers.IO+exceptionHandler).launch{
             val response = repository.getPhotos()
             withContext((Dispatchers.Main)){
+                Log.d("WITHCONTEXT", "withcontext started")
                 if(response.isSuccessful){
                     dogPhotoList.postValue(response.body())
-
                     loading.value = false
                 }
                 else{
+                    Log.d("RESPONSE1", "Not Succesful")
                     onError("Hibakód:${response.message()}")
                 }
             }

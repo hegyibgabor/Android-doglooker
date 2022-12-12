@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.app.ProgressDialog;
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -55,7 +56,6 @@ class photo : Fragment() {
 
         viewmodel = ViewModelProvider(this,ModelViewModelFactory(repository)).get(DogViewModel::class.java)
 
-
         binding.photosRecycler.adapter = adapter
 
         viewmodel.dogPhotoList.observe(viewLifecycleOwner){
@@ -74,7 +74,6 @@ class photo : Fragment() {
         })
 
         viewmodel.getPhotos()
-
         val fr_imgbtn = view.findViewById<TextView>(R.id.fr_infobtn)
         fr_imgbtn.setOnClickListener { Navigation.findNavController(view).navigate(R.id.photo_to_info) }
 
