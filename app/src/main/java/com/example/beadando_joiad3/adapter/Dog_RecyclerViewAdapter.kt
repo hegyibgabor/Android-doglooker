@@ -5,12 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.DiffUtil.DiffResult
 import androidx.recyclerview.widget.RecyclerView
+import com.example.beadando_joiad3.ListDiffUtil
 import com.example.beadando_joiad3.R
 import com.example.beadando_joiad3.model.DogModel
 import kotlin.collections.ArrayList
 
-class Dog_RecyclerViewAdapter(private val dogsList : ArrayList<DogModel>): RecyclerView.Adapter<Dog_RecyclerViewAdapter.MyViewHolder>() {
+class Dog_RecyclerViewAdapter(private var dogsList : ArrayList<DogModel>): RecyclerView.Adapter<Dog_RecyclerViewAdapter.MyViewHolder>() {
 
     private lateinit var mListener: onitemClickListener
 
@@ -39,9 +42,17 @@ class Dog_RecyclerViewAdapter(private val dogsList : ArrayList<DogModel>): Recyc
         holder.imageView.setImageResource(currentItem.img)
     }
 
+
     override fun getItemCount(): Int {
         //mennyi legyen kiírva
         return dogsList.size;
+    }
+
+    fun setData(newDogList : ArrayList <DogModel>) {
+        val diffUtil = ListDiffUtil(dogsList, newDogList)
+        val diffResults = DiffUtil.calculateDiff(diffUtil)
+        dogsList = newDogList
+        diffResults.dispatchUpdatesTo(this)
     }
 
     class MyViewHolder(itemView: View, listener: onitemClickListener) : RecyclerView.ViewHolder(itemView) {

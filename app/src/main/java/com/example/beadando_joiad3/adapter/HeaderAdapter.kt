@@ -5,7 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.beadando_joiad3.ListDiffUtil
 import com.example.beadando_joiad3.R
+import com.example.beadando_joiad3.model.DogModel
 
 class HeaderAdapter: RecyclerView.Adapter<HeaderAdapter.HeaderViewHolder>(){
     class HeaderViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -15,6 +17,7 @@ class HeaderAdapter: RecyclerView.Adapter<HeaderAdapter.HeaderViewHolder>(){
             dogNumberTextView.text = dogCount.toString()
         }
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeaderViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_header, parent, false)

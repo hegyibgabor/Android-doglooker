@@ -11,6 +11,8 @@
     <string name="k_pek">Képek</string>
     <string name="info">Info</string>
     <string name="kepek">Képek</string>
+    <string name="faj_neve">Faj neve:</string>
+    <string name="tulajdons_gok_aranyos">Tulajdonságok: Aranyos</string>
 
 
     <string-array name="breed_name">

@@ -17,7 +17,8 @@ class DogListActivity : AppCompatActivity() {
     R.drawable.husky,R.drawable.kuvasz,R.drawable.pomeranian,R.drawable.spaniel)
 
     lateinit var breedTextView : Array<String> // e helyére a neveket
-
+    var headerAdapter = HeaderAdapter()
+    var adapter = Dog_RecyclerViewAdapter(newArrayList)
     private lateinit var recyclerView : RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,11 +41,11 @@ class DogListActivity : AppCompatActivity() {
         val dogBreeds = resources.getStringArray(R.array.breed_name)
         for(i in dogBreeds.indices){
             newArrayList.add(DogModel(dogBreeds[i],dogImages[i]))
+            adapter.setData(newArrayList)
 
         }
 
-        var headerAdapter = HeaderAdapter()
-        var adapter = Dog_RecyclerViewAdapter(newArrayList)
+
 
         val concatAdapter = ConcatAdapter(headerAdapter,adapter)
         recyclerView.adapter = concatAdapter

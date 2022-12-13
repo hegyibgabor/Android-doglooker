@@ -24,7 +24,7 @@ class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>(){
 
     override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
         val dog = photolist[position]
-        Picasso.get().load(dog.message[position]).into(holder.binding.itempic)
+        Picasso.get().load(dog.message).into(holder.binding.itempic)
     }
 
     override fun getItemCount(): Int {

@@ -1,5 +1,6 @@
 package com.example.beadando_joiad3
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -15,16 +16,20 @@ class DogLookerActivity : AppCompatActivity() {
         val breedName: TextView = findViewById(R.id.mainTitle)
 
 
+
         val bundle: Bundle? = intent.extras
         val dogImages = bundle!!.getInt("dogImages")
         val dogBreeds = bundle.getString("breed_name")
 
         breedName.text = dogBreeds
 
+        val intent  = Intent(this@DogLookerActivity,info::class.java)
+        intent.putExtra("breed_name",dogBreeds)
 
 
 
     }
+
 
 
 

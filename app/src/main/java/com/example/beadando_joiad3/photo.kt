@@ -8,7 +8,9 @@ import android.widget.TextView
 import android.app.ProgressDialog;
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavArgs
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.beadando_joiad3.adapter.PhotoAdapter
@@ -27,7 +29,7 @@ class photo : Fragment() {
     private val adapter = PhotoAdapter()
 
     private var _binding: FragmentPhotosBinding? = null
-
+    val args: photoArgs by navArgs()
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

@@ -33,7 +33,6 @@ class info : Fragment() {
         val action = infoDirections.infoToPhoto("(megnézett)")
         fr_infobtn.setOnClickListener { Navigation.findNavController(view).navigate(action) }
 
-
         return view
     }
 
