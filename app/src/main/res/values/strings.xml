@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Beadando-joiad3</string>
+    <string name="button">Start</string>
+    <string name="dogViewer">Kutya nézegető</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="breed_name">Pomeranian</string>
+    <string name="fajta_kepe"></string>
+    <string name="list_title">Kutya lista</string>
+    <string name="fajta_neve">  Kutyák száma: </string>
+    <string name="k_pek">Képek</string>
+    <string name="info">Info</string>
+    <string name="kepek">Képek</string>
+
+
+    <string-array name="breed_name">
+        <item>Affenpinscher</item>
+        <item>Akita</item>
+        <item>Borzoi</item>
+        <item>Bulldog</item>
+        <item>Beagle</item>
+        <item>Chihuahua</item>
+        <item>Chow</item>
+        <item>Collie</item>
+        <item>Dachshund</item>
+        <item>Dalmatian</item>
+        <item>Husky</item>
+        <item>Kuvasz</item>
+        <item>Pomeranian</item>
+        <item>Spaniel</item>
+
+
+    </string-array>
+</resources>
